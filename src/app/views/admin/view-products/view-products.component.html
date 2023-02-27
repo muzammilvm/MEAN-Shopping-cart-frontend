@@ -1,0 +1,38 @@
+<app-admin-header></app-admin-header>
+
+
+<section>
+  <div class="container">
+    <div class="row mt-4 mb-4">
+      <a routerLink="/add-products" class="btn btn-warning ml-auto">add product</a>
+    </div>
+    <table class="table mt-5 border" id="protable">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Description</th>
+          <th>Image</th>
+          <th>Options</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let product of products">
+          <th scope="row">{{product.name}}</th>
+          <td>{{product.category}}</td>
+          <td>₹{{product.price}}</td>
+          <td>{{product.description}}</td>
+          <td> <img style="height:50px ;width:50px" src="{{product.imageUrl}}" alt="no image"> </td>
+          <td>
+            <a style="margin-right: 10px;" routerLink="/edit-product/{{product._id}}" class="btn btn-primary">Edit</a>
+            <a class="btn btn-danger text-white" (click)="deleteProduct(product._id)">delete</a>
+          </td>
+        </tr>
+
+
+      </tbody>
+    </table>
+  </div>
+</section>

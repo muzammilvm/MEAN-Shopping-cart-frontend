@@ -1,0 +1,21 @@
+
+<app-admin-header></app-admin-header>
+
+
+<section>
+    <div class="container">
+      <table class="table mt-5 border">
+        <tbody>
+          <tr>
+            <th>Name</th>
+            <th>E-mail</th>
+          </tr>
+          <tr *ngFor="let user of users">
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>

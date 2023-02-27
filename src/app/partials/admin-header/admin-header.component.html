@@ -1,0 +1,40 @@
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-info">
+        <a class="navbar-brand text-white" routerLink="/admin">Admin Panel</a>
+
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03 ">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li *ngIf="adminName" class="nav-item">
+                    <a class="nav-link" routerLink="/admin/placed-orders">All orders</a>
+                </li>
+                <li *ngIf="adminName" class="nav-item">
+                    <a class="nav-link" routerLink="/admin/user-details">All users</a>
+                </li>
+            </ul>
+            <!-- {{!-- <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form> --}} -->
+        </div>
+
+        <div class="dropdown">
+            <a class="nav-link btn btn-dark float-left " style="margin-right: 20px;height: 40px;" href="/">User-view<span class="sr-only">(current)</span></a>
+
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <a *ngIf="adminName">{{adminName}}</a>
+                <a *ngIf="!adminName">Account</a>
+
+                <!-- {{/if}} -->
+            </button>
+            <div class="dropdown-menu mt-2" style="margin-left:75px;" aria-labelledby="dropdownMenuButton">
+                <!-- {{#if administrator}} -->
+                <a *ngIf="adminName" class="dropdown-item" (click)="logout()">Logout</a>
+                <!-- {{else}} -->
+                <a *ngIf="!adminName" class="dropdown-item" routerLink="/admin-login">Login</a>
+                <!-- {{/if}} -->
+            </div>
+        </div>
+    </nav>
+</header>

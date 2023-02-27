@@ -1,0 +1,25 @@
+.cart{
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.left{
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+}
+
+.right{
+    width: 100%;
+    height: 100%;
+}
+
+.qty{
+    height: 30px;
+    width: 30px;
+    font-size: 10px;
+}
+
+

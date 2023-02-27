@@ -1,0 +1,36 @@
+.img{
+    height: 720px;
+    width: 100%;
+    background-image: url(https://hips.hearstapps.com/hmg-prod/images/6-9-1652803409.jpg);
+    background-size: cover;
+}
+
+.features{
+    height: 220px;
+    width: 100%;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.cols{
+    height: 180px;
+    width: 350px;
+    background-color: #ffffff;
+
+}
+.addcart{
+    width: 50%;
+    font-size: 13px;
+    color: #8f8d8f;
+}
+
+.name{
+    color: #797976;
+    font-weight: 700;
+}
+
+.addcart:hover{
+    color: #322f32;
+
+}

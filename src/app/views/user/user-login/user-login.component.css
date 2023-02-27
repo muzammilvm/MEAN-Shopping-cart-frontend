@@ -1,0 +1,10 @@
+.body{
+    /* background-image: url(https://wallpaperaccess.com/full/16692.jpg);
+    background-size: cover; */
+    background-color: #f6e2e3;
+    height: 715px;
+}
+.vl {
+    border-left: 3px solid white;
+    margin-left: -3px;
+  }

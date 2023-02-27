@@ -1,0 +1,21 @@
+
+<app-user-header></app-user-header>
+
+
+<section>
+    <div class="container mt-5">
+      <div class="row">
+        <div class="col-md-3 mt-3"  *ngFor="let orderItem of orderItems">
+          <div class="card" style="width: 15rem;display: flex;">
+            <img height="250px" class="card-img-top items p-2" src="{{orderItem.product.imageUrl}}" alt="Card image cap" >
+            <div class="card-body addcart" style="text-align: center;">
+              <h5 class="card-title">{{orderItem.product.name}}</h5>           
+              <p class="card-text">₹ {{orderItem.product.price}}</p>
+               <p class="card-text">Quantity: {{orderItem.quantity}}</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>

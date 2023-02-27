@@ -1,0 +1,60 @@
+<app-admin-header></app-admin-header>
+
+
+<div class="body">
+    <div class="container">
+        <div class="row justify-content-center mt-3">
+
+            <div class="mt-5">
+                <div class="d-flex justify-content-center">
+                    <h2 style="align-items: center;">Create new Admin Account</h2>
+                </div>
+                <form (ngSubmit)="signup()" [formGroup]="signupForm" action="" class="border p-5 me-5">
+                    <div class="mb-4">
+                        <input name="name" formControlName="name" class="form-control" type="text"
+                            placeholder="Admin name">
+                    </div>
+
+
+                    <!-- invalid name -->
+                    <div *ngIf="signupForm.get('name')?.errors && signupForm.get('name')?.touched"
+                        class="text-danger mb-2" style="font-size: 14px;">
+                        Invalid Username
+                    </div>
+
+                    <div class="mb-2">
+                        <input name="email" formControlName="email" class="form-control" type="text"
+                            placeholder="Email Address">
+                    </div>
+
+
+                    <!-- invalid email -->
+                    <div *ngIf="signupForm.get('email')?.errors && signupForm.get('email')?.touched"
+                        class="text-danger mb-2" style="font-size: 14px;">
+                        Invalid Email Address
+                    </div>
+
+                    <div class="mt-4">
+                        <input name="password" formControlName="password" class="form-control" type="password"
+                            placeholder="Password">
+                    </div>
+
+                    <!-- invalid pass -->
+                    <div *ngIf="signupForm.get('password')?.errors && signupForm.get('password')?.touched"
+                        class="text-danger mb-2" style="font-size: 14px;">
+                        Invalid Password
+                    </div>
+                    <div class="mt-4">
+                        <button type="submit" class="btn btn-primary">
+                            Register
+                        </button>
+                        <span>
+                            Already A User? Click here to <a routerLink="/admin-login">Login</a>
+                        </span>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

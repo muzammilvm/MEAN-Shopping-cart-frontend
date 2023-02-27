@@ -1,0 +1,79 @@
+
+
+<app-admin-header></app-admin-header>
+
+
+<section>
+    <div class="container">
+        <div class="row justify-content-center mt-3">
+            <div class="col-md-4">
+                <div class="d-flex justify-content-center">
+                    <h2 style="align-items: center;margin-top: 1cm;">Add product</h2>
+                </div>
+                <form (ngSubmit)="addProduct()" [formGroup]="productForm" class="mt-4 mb-3"
+                    enctype="multipart/form-data">
+
+                    <div class="form-outline">
+                        <label for="">Name</label><br>
+                        <input type="text" formControlName="name" class=" form-control" name="name"
+                            style="border-width: 2px;"><br>
+                    </div>
+                    <!-- invalid name -->
+                    <div *ngIf="productForm.get('name')?.errors && productForm.get('name')?.touched"
+                        class="text-danger mb-2" style="font-size: 14px;margin-top: -15px;">
+                        This field is required
+                    </div>
+
+                    <div class="form-outline">
+                        <label for="">Category</label><br>
+                        <input type="text" formControlName="category" class="form-control" name="category"
+                            style="border-width: 2px;"><br>
+                    </div>
+                    <!-- invalid name -->
+                    <div *ngIf="productForm.get('category')?.errors && productForm.get('category')?.touched"
+                        class="text-danger mb-2" style="font-size: 14px;margin-top: -15px;">
+                        This field is required
+                    </div>
+                    <div class="form-outline">
+                        <label for="">Price</label><br>
+                        <input type="text" formControlName="price" class="form-control" name="price"
+                            style="border-width: 2px;"><br>
+                    </div>
+                    <!-- invalid name -->
+                    <div *ngIf="productForm.get('price')?.errors && productForm.get('price')?.touched"
+                        class="text-danger mb-2" style="font-size: 14px;margin-top: -15px;">
+                        This field is required and Should be in Number
+                    </div>
+                    <div class="form-outline">
+                        <label for="">Description</label><br>
+                        <input type="text" formControlName="description" class="form-control" name="description"
+                            style="border-width: 2px;"><br>
+                    </div>
+                    <!-- invalid name -->
+                    <div *ngIf="productForm.get('description')?.errors && productForm.get('description')?.touched"
+                        class="text-danger mb-2" style="font-size: 14px;margin-top: -15px;">
+                        This field is required
+                    </div>
+
+                    <label for="">image</label><br>
+                    <div *ngIf="image">
+                        <img width="30px" height="30px" src="" alt="">
+                    </div>
+                    
+                    <input (change)="addImage($event)" type="file" class="addproduct" name="image"><br>
+                    <div *ngIf="productForm.get('image')?.errors && productForm.get('image')?.touched"
+                        class="text-danger mb-2" style="font-size: 14px;margin-top: -15px;">
+                        This field is required
+                    </div>
+                    
+
+                    <button type="submit" class="btn mt-4 btn-success">submit</button>
+
+                </form>
+
+
+
+            </div>
+        </div>
+    </div>
+</section>

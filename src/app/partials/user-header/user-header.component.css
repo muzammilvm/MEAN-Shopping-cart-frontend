@@ -1,0 +1,17 @@
+.transparent{
+ color: black;
+
+}
+
+.Scroll{
+    background-color: rgba(253, 253, 250, .96);
+    opacity: .97;
+    color: black;
+    z-index: 100;
+    background-image: linear-gradient(200deg,transparent,rgba(232, 232, 232, 232),white);
+}
+
+.fade{
+    margin-top: -10px;
+    background-image: linear-gradient(180deg,transparent,rgba(37,37,37,.1),#111);   
+}

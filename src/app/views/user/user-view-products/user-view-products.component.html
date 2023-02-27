@@ -1,0 +1,56 @@
+
+
+<app-user-header class="fixed-top" [count]="cartCount"></app-user-header>
+
+
+<div class="img d-flex align-items-center justify-content-end">
+  <div class=" h-50 w-50 ml-5">
+    <h4 class="text-center mt-5 ">Summer Styles</h4>
+    <h1 class="text-center animate__animated animate__backInRight" style="font-size: 70px;">
+      50% OFF
+    </h1>
+    <!-- <h4 class="text-center"><a class="text-center" href="cards">shop more</a></h4> -->
+  </div>
+</div>
+
+<div class="features">
+  <div class="cols mr-5 text-center p-4">
+    <i class="fa-solid fa-truck text-center mb-3" style="font-size: 25px;"></i>
+    <h6 class="text-center">World Wide Delivery</h6>
+    <p style="color: #afadad;">Far far away, behind the word mountains, far from the countries.</p>
+  </div>
+  <div class="cols mr-5 text-center p-4">
+    <i class="fa-solid fa-shield-halved text-center mb-3" style="font-size: 25px;"></i>
+    <h6 class="text-center">Secure Payment</h6>
+    <p style="color: #afadad;">Far far away, behind the word mountains, far from the countries.</p>
+  </div>
+  <div class="cols text-center p-4">
+    <i class="fa-solid fa-money-bills text-center mb-3" style="font-size: 25px;"></i>
+    <h6 class="text-center">Cash On Delivery</h6>
+    <p style="color: #afadad;">Far far away, behind the word mountains, far from the countries.</p>
+  </div>
+</div>
+
+<section id="cards" class="d-flex justify-content-center mb-5" style="margin-top: 100px;">
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let product of products" class="col-md-3 mt-3">
+        <div class="card text-center" style="width: 15rem;">
+          <img height="250px" class="card-img-top items p-2" src="{{product.imageUrl}}" alt="Card image cap">
+          <p class="card-title name">{{product.name}}</p>
+          <p class="card-text" style="margin-top: -1px; font-size: 14px; font-weight: 500;color: #4e4e48;">₹{{product.price}}</p>
+        </div>
+        <div class="border addcart d-flex align-items-center justify-content-center"
+          style="text-align: center;width: 15rem;height:45px;">
+          <div (click)="addToCart(product._id)" class="addcart btn"><i class="fa-solid fa-cart-shopping mr-1"></i>Add to cart</div>
+          <div class="addcart btn mr-2"><i class="fa-solid fa-heart mr-1"></i>Add to wishlist</div>
+          <!-- <button style="width: 100%;" (click)="addToCart(product._id)" class="btn btn-dark">Add to cart</button> -->
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+

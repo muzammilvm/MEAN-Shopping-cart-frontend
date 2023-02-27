@@ -1,0 +1,86 @@
+<app-user-header></app-user-header>
+
+
+<div *ngIf="orderPlaced">
+    <div class="row mt-5">
+        <div class="col-4"></div>
+        <div class="col-4 text-center">
+            <i class="fa-solid fa-check" style="font-size: 50px;color: blue;"></i>
+            <h1>Order Placed</h1>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-4"></div>
+        <div class="col-4 text-center">
+            <a href="/orders" class="btn btn-primary">View Order Details</a>
+        </div>
+    </div>
+</div>
+
+
+<section  *ngIf="!orderPlaced">
+    <div class="container mt-5">
+        <form (ngSubmit)="placeOrder()" [formGroup]="placeOrderForm" id="checkout-form">
+            <div class="row">
+                <div class="col-md-6 border p-4">
+                    <h2>Enter Delivery Details</h2>
+
+                    <label for="">Address</label>
+                    <input type="text" formControlName="address" class="form-control" id="address" name="address"
+                        value="valiyakath house">
+                    <!-- invalid Address -->
+                    <div *ngIf="placeOrderForm.get('address')?.errors && placeOrderForm.get('address')?.touched"
+                        class="text-danger mb-2" style="font-size: 14px;">
+                        Please enter this field
+                    </div>
+
+                    <label for="">Pincode</label>
+                    <input type="text" formControlName="pincode" class="form-control" id="pincode" name="pincode"
+                        value="680702">
+                    <!-- invalid pin -->
+                    <div *ngIf="placeOrderForm.get('pincode')?.errors && placeOrderForm.get('pincode')?.touched"
+                        class="text-danger mb-2" style="font-size: 14px;">
+                        Please enter this field as number
+                    </div>
+
+                    <label for="">Mobile</label>
+                    <input type="text" formControlName="mobile" class="form-control" id="mobile" name="mobile"
+                        value="9745007140">
+                    <!-- invalid mobile -->
+                    <div *ngIf="placeOrderForm.get('mobile')?.errors && placeOrderForm.get('mobile')?.touched"
+                        class="text-danger mb-2" style="font-size: 14px;">
+                        please enter valid mobile number
+                    </div>
+                    <!-- <input type="text" name="userid" id="" value="" hidden> -->
+                </div>
+                <div class="col-md-1"></div>
+
+                <div class="col-md-5 border p-4">
+                    <div class="container ml-5 checkout">
+                        <h5>Total Amount: ₹{{totalPrice}} </h5>
+                        <hr>
+                        <div class="payment">
+                            <p>Payment Method</p>
+                            <div *ngIf="placeOrderForm.get('payment')?.errors && placeOrderForm.get('payment')?.touched"
+                                class="text-danger mb-2" style="font-size: 14px;">
+                                Please select any one payment method
+                            </div>
+                            <label for="COD" class="radio-inline">
+                                <input type="radio" formControlName="payment" name="paymentMethod" value="COD"
+                                    id="COD">COD
+                            </label><br>
+                            <label for="onlinePayment" class="radio-inline mt-2">
+                                <input type="radio" formControlName="payment" name="paymentMethod" value="ONLINE"
+                                    id="onlinePayment">Online
+                                Payment
+                            </label><br>
+                            <button class="btn btn-primary mt-3" type="submit">Checkout</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</section>

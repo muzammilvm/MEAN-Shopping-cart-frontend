@@ -1,0 +1,25 @@
+.left {
+    height: 100%;
+    width: 100%;
+}
+
+.right {
+    height: 100%;
+    width: 100%;
+}
+
+.leftDelivery {
+    font-size: 12px;
+    font-weight: 400;
+    color: #585856;
+}
+
+.rightDelivery {
+    margin-left: auto;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.pointer:hover{
+    cursor: pointer;
+}
